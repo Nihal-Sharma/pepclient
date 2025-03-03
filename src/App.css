@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+.add-main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inner{
+   width: 40vw;
+   background-color: white; 
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border-radius: 6px;
 }
+.header{
+    font-size: 22px;
+    font-weight: 500;
+    width: 90%;
+    
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.name{
+    width: 90%;
+    
+    margin-top: 20px;
+    
 }
-
-.App-link {
-  color: #61dafb;
+.input{
+    width: 95%;
+    height: 20px;
+    padding : 4px 10px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drop{
+    width: 90%;
+    margin-top: 20px;
+}
+.down{
+    margin-top: 8px;
+    
+}
+.submit-but{
+    height: 30px;
+    width: 90%;
+    background-color:rgb(52, 52, 52); 
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px 1px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.home-main{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(230, 230, 230);
+}
+.search{
+    width: 90%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.search input{
+    width: 80%;
+    border: 2px solid rgb(171, 171, 171);
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+   
+}
+.search button{
+    padding: 5px 10px;
+    border: 2px solid rgb(52, 52, 52);
+    font-size: 16px;
+    color: white;
+    background-color: rgb(52, 52, 52);
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.card{
+    
+    background-color: rgb(255, 255, 255);
+    height: 350px;
+    width: 320px;
+    border-radius: 10px;
+    border: 1px solid rgb(210, 210, 210);
+    
+    
+}
+.pic{
+    width:  320px;
+    height: 60%;
+    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+.name-text{
+    font-weight: 500;
+    font-size: 22px;
+   
+}
+.loc-icon{
+    color: grey;   
+}
+.spec{
+    font-size: 15px;
+    color: rgb(162, 162, 162);
+    font-weight: 500;
+    margin-left: 10px;
+}
+.bottom{
+    padding-left: 10px;
+    margin-bottom: 10px;
+   
+}
+.stars{
+    color: rgb(238, 203, 8);
+}
+.rating{
+    color: rgb(162, 162, 162);
+}
+.view{
+    text-decoration: none;
+    color: rgb(143, 143, 143);
+    background-color: rgb(231, 231, 231);
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.update {
+    margin-left: 20px;
+    color:  grey;
+}
+.cardss{
+    display: flex;
+    width: 90vw;
+    flex-wrap: wrap;
+    
+    gap: 30px;
+}
+.view-main{
+    background-color: rgb(230, 230, 230);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-view{
+    
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid rgb(210, 210, 210);  
+}
+.pic-view{
+    width:  100%;
+    height: 60%;
+    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+.cont{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+  
+}
+.gap{
+    margin-left: 30px;
+}
+.desc{
+    color: rgb(144, 144, 144);
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+}
+.spec-bot{
+    font-size: 15px;
+    color: rgb(162, 162, 162);
+    font-weight: 500;
+    
 }

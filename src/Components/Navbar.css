@@ -1,0 +1,41 @@
+.nav{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+
+}
+.left-name{
+   padding: 10px;
+   
+}
+.add-but{
+   padding: 10px;
+   background-color: rgb(52, 52, 52);
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 30px;
+   
+}
+.add-but:hover{
+   padding: 8px;
+   border: 2px solid grey;
+   background-color: rgb(52, 52, 52);
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 30px;
+   
+}
+.left-name text{
+    color: rgb(52, 52, 52);
+    font-size: 20px;
+    font-weight: 500;
+}
+.link-add{
+    text-decoration: none;
+    color: white;
+}
