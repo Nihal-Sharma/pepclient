@@ -1,20 +1,36 @@
 
-import { useParams } from 'react-router-dom'
-import React, { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { Link } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating'
+import axios from 'axios';
 const Update = () => {
+  const navigate = useNavigate()
+  const [data , setdata] = useState("")
   const {_id} = useParams();
-  const data = {name : 'Ivy Hospital' , city: 'Hoshiarpur' , img :'https://media.istockphoto.com/id/1419877131/photo/building-facade-of-a-hospital-in-commercial-and-business-district-under-blue-sky.jpg?s=612x612&w=0&k=20&c=wGxVbFSxljSZb_t_qROE4RwsCgssKbGlqawAtmQ88Ls=' , spec :'Neurologist'
-    , rating :3, _id : '2bfghjhjhjhrrr'
-  }
+  useEffect(() => {
+    axios.post(`https://pep-ishc.onrender.com/api/v1/hospitals/getDetails` , {_id : _id}).then((result)=>{console.log(result.data)
+      setName(result.data.name);
+      setcity(result.data.city)
+      setimg(result.data.img)
+      setspec(result.data.spec)
+
+    })
+  } ,[]);
+
+  
   const [name, setName] = useState(data.name)
   const [city, setcity] = useState(data.city)
   const [img, setimg] = useState(data.img)
-  const [spec , setspec] = useState(data.spec)
+  const [spec , setspec] = useState("")
   const [rating, setRating] = useState(0)
+
+
+  const onSubmit = ()=>{
+    axios.put(`https://pep-ishc.onrender.com/api/v1/hospitals/update?_id=${_id}` , {name , city , img , spec , rating}).then((result)=>{alert("Updated"); navigate("/")})
+  }
   
     // Catch Rating value
     const handleRating = (rate) => {
@@ -32,7 +48,7 @@ const Update = () => {
       'Pathology', 'Pediatrics', 'Psychiatry', 'Surgery', 'Urology' , "Dermatology"
     ];
     const _onSelect= (option)=>{setspec(option.value)}
-    const defaultOption = data.spec
+    const defaultOption = spec
   return (
     <div className="add-main">
       <div className="inner">
@@ -68,7 +84,7 @@ const Update = () => {
         /* Available Props */
       />
         </div>
-      <Link className="submit-but">Submit</Link>
+      <Link className="submit-but" onClick={onSubmit}>Submit</Link>
       </div>
     </div>
   )

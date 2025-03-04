@@ -1,12 +1,31 @@
-import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import axios from 'axios';
 const AddDetails = () => {
   const data = {desc :'Description' , noDoctors : 2, noDepartment : 3}
-  const [desc , setdesc] = useState(data.desc)
-  const [noDoctors , setnoDoctors] = useState(data.noDoctors)
-  const [noDepartment , setnoDepartment] = useState(data.noDepartment)
+const navigate = useNavigate();
+  useEffect(() => {
+    axios.post(`https://pep-ishc.onrender.com/api/v1/hospitals/getDetails` , {_id : _id}).then((result)=>{console.log(result.data)
+      setdesc(result.data.desc);
+      setnoDoctors(result.data.noDoctor)
+      setnoDepartment(result.data.noDepartment)
+      
+
+    })
+  } ,[]);
+
+  
+    const onSubmit = ()=>{
+      axios.post(`https://pep-ishc.onrender.com/api/v1/hospitals/details?_id=${_id}` , {desc , noDoctor : noDoctors , noDepartment}).then((result)=>{alert("Updated"); navigate("/")})
+    }
+    
+  
+
+  const [desc , setdesc] = useState("")
+  const [noDoctors , setnoDoctors] = useState(0)
+  const [noDepartment , setnoDepartment] = useState(0)
   const {_id} = useParams();
   return (
     <div className="add-main">
@@ -32,7 +51,7 @@ const AddDetails = () => {
       
          
         
-      <Link className="submit-but">Update</Link>
+      <Link className="submit-but" onClick={onSubmit}>Update</Link>
       </div>
     </div>
   )
